@@ -5,7 +5,7 @@ import numpy as np
 import time
 import datetime
 import scipy
-#from hampel import hampel
+from hampel import hampel
 import matplotlib.pyplot as plt
 
 DATA_DIR = 'data'
@@ -28,6 +28,5 @@ def date_parser(date):
 
 
 def remove_outliers(data):
-    #[filtered_data, _] = hampel(data)
-    filtered_data = data # no filtering
+    [filtered_data, _] = hampel(data)
     return filtered_data
