@@ -14,6 +14,7 @@ TEMPERATURE_FILENAME = os.path.join(DATA_DIR, 'SCUd_134t_temperatura.csv')
 V_HEADER_NAMES = ['timestamp', 'vibration']
 T_HEADER_NAMES = ['timestamp', 'temperature']
 SEP = ';'
+SAMPLE_TIME_SEC = 1
 
 def plot_timeseries_data(df_in):
     fig, axes = plt.subplots(nrows=2, ncols=1)
