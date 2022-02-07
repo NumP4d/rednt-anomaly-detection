@@ -8,7 +8,7 @@ import scipy
 from hampel import hampel
 import matplotlib.pyplot as plt
 
-#plt.rcParams["figure.figsize"]=30,30
+plt.rcParams["figure.figsize"]=20,20
 
 DATA_DIR = 'data'
 VIBRATION_FILENAME = os.path.join(DATA_DIR, 'SCUd_134t_drgania.csv')
