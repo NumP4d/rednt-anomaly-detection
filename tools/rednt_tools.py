@@ -21,7 +21,6 @@ SAMPLE_TIME_SEC = 4*60
 
 def plot_timeseries_data(df_in):
     fig, axes = plt.subplots(nrows=2, ncols=1)
-    df_in = df_in.set_index('timestamp')
     df_in.vibration.plot(ax=axes[0], title='vibrations',
                          legend=False, style='.')
     df_in.temperature.plot(ax=axes[1], title='temperature',
