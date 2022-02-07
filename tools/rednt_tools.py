@@ -8,18 +8,23 @@ import scipy
 from hampel import hampel
 import matplotlib.pyplot as plt
 
+plt.rcParams["figure.figsize"]=20,20
+
 DATA_DIR = 'data'
 VIBRATION_FILENAME = os.path.join(DATA_DIR, 'SCUd_134t_drgania.csv')
 TEMPERATURE_FILENAME = os.path.join(DATA_DIR, 'SCUd_134t_temperatura.csv')
 V_HEADER_NAMES = ['timestamp', 'vibration']
 T_HEADER_NAMES = ['timestamp', 'temperature']
 SEP = ';'
-SAMPLE_TIME_SEC = 1
+SAMPLE_TIME_SEC = 4*60
 
-def plot_timeseries_data(df_in):
+
+def plot_timeseries_data(df_in, style='.'):
     fig, axes = plt.subplots(nrows=2, ncols=1)
-    df_in.vibration.plot(ax=axes[0], title='vibrations', legend=False, style='.')
-    df_in.temperature .plot(ax=axes[1], title='temperature', legend=False, style='.')
+    df_in.vibration.plot(ax=axes[0], title='vibrations',
+                         legend=False, style=style)
+    df_in.temperature.plot(ax=axes[1], title='temperature',
+                           legend=False, style=style)
     plt.show()
 
 
